@@ -1,0 +1,152 @@
+@font-face {
+font-family: "Journal";
+src: url(../fonts/Journal.ttf) format("truetype");
+}
+
+body{
+	background:url(../images/welcome-bg.gif) top left;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	margin: 0px;
+	font-size:13px;
+	padding-bottom:15px;
+}
+a {
+	color: #083772;
+}
+a:link {
+	color: #083772;
+	text-decoration: none;
+}
+
+a:visited {
+   color: #1e4e8f;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #0000CC;
+}
+
+#welcome {
+        text-align: center;
+}
+
+#touch-welcome {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    width: 1000px;
+    margin: 0 auto;
+}
+#touch-welcome .top {
+    height: 500px;
+    background:url(../images/technology-stack.png) no-repeat right center;
+    border-bottom: 2px solid gray;
+}
+#touch-welcome .top h1 {
+  margin-top: 95px;
+  font-size: 35px;
+}
+#touch-welcome .top h2 {
+  font-size: 30px;
+  margin-top:25px;
+  margin-bottom:25px;
+  color: #516F83;
+}
+
+#touch-welcome .top .section {
+    width: 365px;
+    margin-bottom:5px;
+}
+#touch-welcome .top .section h3 {
+  font-size: 28px;
+}
+#touch-welcome .top .section h3 a {
+  color: #000;
+}
+#touch-welcome .top .section h3 a span {
+  display: inline-block;
+  width:22px;
+  height:22px;
+  background:url(../images/icon3.png) no-repeat;
+  position: relative;
+  top: 4px;
+  margin-left: 7px;
+}
+#touch-welcome .top .section p {
+  font-size:25px;
+  color:#666666;
+  line-height: 1;
+}
+
+#touch-welcome table {
+  margin-top: 50px;
+}
+#touch-welcome table th {
+    text-align: left;
+    color:#516E83;
+    font-size: 25px;
+    font-weight:bold;
+    line-height: 1;
+}
+#touch-welcome table th a {
+  color:#126499;
+  font-size: 32px;
+  font-weight: bold;
+}
+#touch-welcome table th > span {
+  width:19px;
+  height:19px;
+  background:url(../images/icon1.png) no-repeat;
+  position: relative;
+  top: 2px;
+  margin-right: 7px;
+  display: inline-block;
+}
+#touch-welcome table th > span.bulb {
+  background:url(../images/icon4.png) no-repeat;
+}
+#touch-welcome table th a span {
+  width:9px;
+  height:12px;
+  background:url(touch/resources/images/icon2.png) no-repeat;
+  position: relative;
+  top: 0;
+  margin-left: 2px;
+  display: inline-block;
+}
+#touch-welcome table td a {
+  display: inline-block;
+  color: #126499;
+  line-height: 1;
+  font-size: 20px;
+}
+
+.bottom-logo {
+    margin-top: 25px;
+    width: 100px;
+    float:left;
+}
+
+.bottom-right {
+    width: 90%;
+    float:right;
+}
+
+.about-title {
+    font-family: "Journal";
+    font-size: 36px;
+    color: greenYellow;
+}
+
+.about-subtitle {
+    width: 300px;
+    line-height: 1;
+}
+
+.greenyellow {
+    color: greenYellow;
+}
+.blueViolet {
+    color:blueViolet;
+}

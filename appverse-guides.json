@@ -1,0 +1,37 @@
+ [
+      {
+          "title": "Overview",
+          "items": [
+              {
+                  "name": "platform_overview_model",
+                  "title": "A Model Driven Approach",
+                  "description": "<font style='font-size:11px;'>We work with a <b>Model</b> device and not a specific device in mind!</font>"
+              },
+              {
+                  "name": "platform_overview",
+                  "title": "From Model To Implementation",
+                  "description": "<font style='font-size:11px;'>From the model we derive <b>Interfaces</b><br/>We then <b>Implement</b> those interfaces for a device <b>Platform</b></font>"
+              }
+          ]
+      },
+      {
+          "title": "Development",
+          "items": [
+              {
+                  "name": "graphical_resources",
+                  "title": "Graphical Resources for Apps",
+                  "description": "<font style='font-size:11px;'>Here you have the <b>Guidelines</b> for implementing your application <b>Icons and <b>Splash Screens!</b></font>"
+              }
+          ]
+      },
+      {
+          "title": "Build in the Cloud",
+          "items": [
+              {
+                  "name": "builder",
+                  "title": "Builder Service",
+                  "description": "<font style='font-size:11px;'>Build Service<br/>No fat client needed<br/><b>Compile anywhere!</b></font>"
+              }
+          ]
+      }
+  ]

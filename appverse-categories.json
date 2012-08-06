@@ -1,0 +1,234 @@
+[
+      {
+          "name": "Unity",
+          "groups": [
+              {
+                  "name": "Analytics",
+                  "classes": [
+                      "Unity.Analytics",
+                      "Unity.Analytics.*"
+                  ]
+              },
+              {
+                  "name": "Database",
+                  "classes": [
+                      "Unity.Database",
+                      "Unity.Database.*"
+                  ]
+              },
+              {
+                  "name": "FileSystem",
+                  "classes": [
+                      "Unity.FileSystem",
+                      "Unity.FileSystem.*"
+                  ]
+              },
+              {
+                  "name": "Geolocation",
+                  "classes": [
+                      "Unity.Geo",
+                      "Unity.Geo.*"
+                  ]
+              },
+              {
+                  "name": "I18N",
+                  "classes": [
+                      "Unity.I18N",
+                      "Unity.I18N.*"
+                  ]
+              },
+              {
+                  "name": "I/O Services",
+                  "classes": [
+                      "Unity.IO",
+                      "Unity.IO.*"
+                  ]
+              },
+              {
+                  "name": "Log",
+                  "classes": [
+                      "Unity.Log",
+                      "Unity.Log.*"
+                  ]
+              },
+              {
+                  "name": "Media",
+                  "classes": [
+                      "Unity.Media",
+                      "Unity.Media.*"
+                  ]
+              },
+              {
+                  "name": "Messaging",
+                  "classes": [
+                      "Unity.Messaging",
+                      "Unity.Messaging.*"
+                  ]
+              },
+              {
+                  "name": "Net",
+                  "classes": [
+                      "Unity.Net",
+                      "Unity.Net.*"
+                  ]
+              },
+              {
+                  "name": "Notification",
+                  "classes": [
+                      "Unity.Notification",
+                      "Unity.Notification.*"
+                  ]
+              },
+              {
+                  "name": "Personal Information Management",
+                  "classes": [
+                      "Unity.Pim",
+                      "Unity.Pim.*"
+                  ]
+              },
+              {
+                  "name": "Security",
+                  "classes": [
+                      "Unity.Security",
+                      "Unity.Security.*"
+                  ]
+              },
+              {
+                  "name": "System",
+                  "classes": [
+                      "Unity.System",
+                      "Unity.System.*"
+                  ]
+              },
+              {
+                  "name": "Telephony",
+                  "classes": [
+                      "Unity.Telephony",
+                      "Unity.Telephony.*"
+                  ]
+              },
+              {
+                  "name": "User Interface (visual components)",
+                  "classes": [
+                      "Unity.ui",
+                      "Unity.ui.*"
+                  ]
+              },
+              {
+                  "name": "Others...",
+                  "classes": [
+                      "Unity",
+                      "Unity.is",
+                      "Unity.JSON"
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "Third-party Libraries",
+          "groups": [
+              {
+                  "name": "Highcharts",
+                  "classes": [
+                      "Highcharts",
+                      "Highcharts.*"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch",
+                  "classes": [
+                      "Ext",
+                      "Ext.anims",
+                      "Ext.is",
+                      "Ext.supports",
+                      "Ext.AbstractStoreSelectionModel",
+                      "Ext.ActionSheet",
+                      "Ext.Ajax",
+                      "Ext.Anim",
+                      "Ext.Application",
+                      "Ext.Audio",
+                      "Ext.Button",
+                      "Ext.Carousel",
+                      "Ext.Component",
+                      "Ext.ComponentMgr",
+                      "Ext.ComponentQuery",
+                      "Ext.CompositeElement",
+                      "Ext.CompositeElementLite",
+                      "Ext.Container",
+                      "Ext.Controller",
+                      "Ext.ControllerManager",
+                      "Ext.DataView",
+                      "Ext.DatePicker",
+                      "Ext.Dispatcher",
+                      "Ext.DomHelper",
+                      "Ext.DomQuery",
+                      "Ext.Element",
+                      "Ext.EventManager",
+                      "Ext.EventObject",
+                      "Ext.IndexBar",
+                      "Ext.Interaction",
+                      "Ext.LayoutManager",
+                      "Ext.List",
+                      "Ext.LoadMask",
+                      "Ext.Map",
+                      "Ext.Media",
+                      "Ext.MessageBox",
+                      "Ext.ModelMgr",
+                      "Ext.Msg",
+                      "Ext.NestedList",
+                      "Ext.Panel",
+                      "Ext.Picker",
+                      "Ext.PluginMgr",
+                      "Ext.Router",
+                      "Ext.SegmentedButton",
+                      "Ext.Sheet",
+                      "Ext.Spacer",
+                      "Ext.StoreMgr",
+                      "Ext.Tab",
+                      "Ext.TabBar",
+                      "Ext.TabPanel",
+                      "Ext.Template",
+                      "Ext.Toolbar",
+                      "Ext.Video",
+                      "Ext.XTemplate"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch - data",
+                  "classes": [
+                     "Ext.data.*"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch - form",
+                  "classes": [
+                     "Ext.form.*"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch - layout",
+                  "classes": [
+                     "Ext.layout.*"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch - lib",
+                  "classes": [
+                     "Ext.lib.*"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch - plugins",
+                  "classes": [
+                     "Ext.plugins.*"
+                  ]
+              },
+              {
+                  "name": "Sencha Touch - util",
+                  "classes": [
+                     "Ext.util.*"
+                  ]
+              }
+          ]
+      }
+]
