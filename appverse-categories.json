@@ -114,6 +114,13 @@
                       "Unity.ui.*"
                   ]
               },
+			  {
+                  "name": "Webtrekk",
+                  "classes": [
+                      "Unity.Webtrekk",
+                      "Unity.Webtrekk.*"
+                  ]
+              },
               {
                   "name": "Others...",
                   "classes": [

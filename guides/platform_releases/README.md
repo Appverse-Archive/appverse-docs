@@ -6,11 +6,17 @@ Releases (SVN Tags)
 
 <table style="width: 100%;">
 <tr><td style="width: 60%;">
-<embed src="guides/platform_releases/MOBPLAT-UnityPlatformReleases-250712-1105-10.pdf" width="850" height="675" style="border: 1px solid;">
+<embed src="guides/platform_releases/MOBPLAT-UnityPlatformReleases-141112-1348-32.pdf" width="1050" height="875" style="border: 1px solid;">
 </td><td>
 
 <pre>
-[25 Jul 2012]   Release_3.3     - Revision 2734  
+[14 Nov 2012]   Release_3.8.2   - Revision 3139
+[17 Oct 2012]   Release_3.7.5   - Revision 3017
+[17 Sep 2012]   Release_3.7.4   - Revision 2870
+[07 Sep 2012]   Release_3.7.3   - Revision 2854
+[29 Aug 2012]   Release_3.7.2   - Revision 2824
+[22 Aug 2012]   Release_3.7.1   - Revision 2797
+[25 Jul 2012]   Release_3.7     - Revision 2734  
 [03 Jul 2012]   Release_3.2.2	- Revision 2672
 [15 Jun 2012]   Release_3.2.1   - Revision 2634
 [01 Jun 2012]   Release_3.2     - Revision 2597  
