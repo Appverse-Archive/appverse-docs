@@ -4,9 +4,9 @@
     "--images": "templates",
     "--welcome": "templates/welcome.html",
     "--head-html": "<link rel='stylesheet' href='resources/css/welcome.css' type='text/css'>",
-    "--output": "submodules/appverse.github.com/docs",
+    "--output": "../appverse-mobile-docs/docs",
     "--": [
-        "submodules/appverse-core-webresources/WebResources/www/unity/3.8/js",
+        "../appverse-mobile/appverse-core-webresources/WebResources/www/unity/3.8/js",
         "lib/appverse",
         "lib/sencha"
     ],

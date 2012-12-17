@@ -1,6 +1,6 @@
 @echo off
 set PATH_TEMPLATE=templates
-set PATH_DESTINATION=submodules\appverse.github.com\docs
+set PATH_DESTINATION=..\appverse-mobile-docs\docs
 jsduck-4.0.beta2.exe --config appverse-config.json
 REM rmdir /S /Q %PATH_DESTINATION%
 mkdir %PATH_DESTINATION%\resources\fonts
