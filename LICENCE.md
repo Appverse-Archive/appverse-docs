@@ -1,7 +1,5 @@
 # Appverse Public License Version 2.0
 
-<http://www.appverse.mobi/licenses/apl_v2.0.pdf>
-
 GFT Appverse, S.L., Sociedad Unipersonal (hereinafter referred to as “GFT”) has developed a software called Appverse. By virtue of this agreement, GFT (as initial “Contributor”, as this term is defined below) and each of the subsequent Contributors of the Appverse software grant You a license on Appverse (the “Appverse Public License Version 2.0” or "APL v2.0") in accordance with the terms and conditions set forth below.
 
 For purposes of interpretation of the APL v2.0, it is noted that this license consists of a version of the Mozilla Public License Version 2.0, amended in accordance with the Spanish law and also modified to be specific to Appverse with the additional Terms in Exhibit C. The original Mozilla Public License 2.0 can be found at: <http://www.mozilla.org/MPL/2.0/>.
@@ -152,7 +150,7 @@ Copyright (c) 2012 GFT Appverse, S.L., Sociedad Unipersonal.
 This Source Code Form is subject to the terms of the Appverse Public License Version 2.0 (“APL v2.0”). If a copy 
 of the APL was not distributed with this file, You can obtain one at: 
 
-http:// www.appverse.mobi/licenses/apl_v2.0.pdf.
+http://appverse.org/legal/appverse-license/.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the 
 conditions of the AppVerse Public License v2.0 are met.
