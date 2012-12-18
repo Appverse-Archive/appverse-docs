@@ -1,6 +1,0 @@
-[submodule "submodules/appverse-core-webresources"]
-	path = submodules/appverse-core-webresources
-	url = https://github.com/Appverse/appverse-core-webresources.git
-[submodule "submodules/appverse.github.com"]
-	path = submodules/appverse.github.com
-	url = https://github.com/Appverse/appverse.github.com.git
