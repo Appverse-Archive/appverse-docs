@@ -15,3 +15,7 @@ copy /Y %PATH_TEMPLATE%\icon3.png %PATH_DESTINATION%\resources\images\icon3.png
 copy /Y %PATH_TEMPLATE%\welcome.css %PATH_DESTINATION%\resources\css\welcome.css
 copy /Y %PATH_TEMPLATE%\Journal.ttf %PATH_DESTINATION%\resources\fonts\Journal.ttf
 copy /Y %PATH_TEMPLATE%\favicon.ico %PATH_DESTINATION%\favicon.ico
+copy /Y %PATH_TEMPLATE%\check.png %PATH_DESTINATION%\resources\images\check.png
+copy /Y %PATH_TEMPLATE%\error.png %PATH_DESTINATION%\resources\images\error.png
+copy /Y %PATH_TEMPLATE%\information.png %PATH_DESTINATION%\resources\images\information.png
+copy /Y %PATH_TEMPLATE%\warning.png %PATH_DESTINATION%\resources\images\warning.png
