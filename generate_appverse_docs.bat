@@ -19,3 +19,5 @@ copy /Y %PATH_TEMPLATE%\check.png %PATH_DESTINATION%\resources\images\check.png
 copy /Y %PATH_TEMPLATE%\error.png %PATH_DESTINATION%\resources\images\error.png
 copy /Y %PATH_TEMPLATE%\information.png %PATH_DESTINATION%\resources\images\information.png
 copy /Y %PATH_TEMPLATE%\warning.png %PATH_DESTINATION%\resources\images\warning.png
+copy /Y %PATH_TEMPLATE%\android-icon.png %PATH_DESTINATION%\resources\images\android-icon.png
+copy /Y %PATH_TEMPLATE%\apple-icon.png %PATH_DESTINATION%\resources\images\apple-icon.png
