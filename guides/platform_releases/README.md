@@ -10,6 +10,12 @@ Releases (SVN Tags)
 </td><td>
 
 <pre>
+[13 May 2013]   Release_3.9		- Revision 3453 (default platform version)
+[16 Apr 2013]   Release_3.8.5	- Revision 3353 (stable version)
+[11 Feb 2013]   Release_3.8.4.1	- Revision 3353 
+[28 Jan 2013]   Release_3.8.4 	- Revision 3269
+[05 Dec 2012]   Release_3.8.3 	- Revision 3226
+[21 Nov 2012]   Release_3.8.2.1 - Revision 3197
 [14 Nov 2012]   Release_3.8.2   - Revision 3139
 [17 Oct 2012]   Release_3.7.5   - Revision 3017
 [17 Sep 2012]   Release_3.7.4   - Revision 2870
@@ -30,7 +36,7 @@ Releases (SVN Tags)
 [18 Oct 2011]   Release_2.2     - Revision 2252  
 [29 Sep 2011]   Release_2.1.1   - Revision 2234  
 [23 Sep 2011]   Release_2.1     - Revision 2229  
-[9 Sep 2011]    Release_2.0     - Revision 2195  
+[09 Sep 2011]	Release_2.0		- Revision 2195  
 </pre>
 
 </td>

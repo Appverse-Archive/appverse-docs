@@ -20,7 +20,12 @@
               {
                   "name": "graphical_resources",
                   "title": "Graphical Resources for Apps",
-                  "description": "<font style='font-size:11px;'>Here you have the <b>Guidelines</b> for implementing your application <b>Icons and <b>Splash Screens!</b></font>"
+                  "description": "<font style='font-size:11px;'>Here you have the <b>Guidelines</b> for implementing your application <b>Icons</b> and <b>Splash Screens!</b></font>"
+              },
+			  {
+                  "name": "push_notifications",
+                  "title": "Enabling Push Notifications",
+                  "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for enabling the <b>Push Notifications</b> in your application</font>"
               }
           ]
       },
