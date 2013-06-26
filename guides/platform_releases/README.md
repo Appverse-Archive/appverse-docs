@@ -14,8 +14,8 @@ Please check, detailed supported features on the following Wiki page:
 <a href="https://github.com/Appverse/appverse-mobile/wiki/Appverse-Supported-Features" target="_blank">Appverse Supported Features</a>
 
 <pre>
-[ undefined ]   Release_4.0		- Revision xxxx (under testing)
-[31 May 2013]   Release_3.9.1	- Revision 3566 (default platform version)
+[25 Jun 2013]   Release_4.0		- Revision 3633 (default platform version)
+[31 May 2013]   Release_3.9.1	- Revision 3566 
 [15 May 2013]   Release_3.9		- Revision 3453
 [16 Apr 2013]   Release_3.8.5	- Revision 3353 
 [11 Feb 2013]   Release_3.8.4.1	- Revision 3353 (stable version)

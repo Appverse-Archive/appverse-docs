@@ -9,6 +9,13 @@
                       "Unity.Analytics.*"
                   ]
               },
+			  {
+                  "name": "AppLoader",
+                  "classes": [
+                      "Unity.AppLoader",
+                      "Unity.AppLoader.*"
+                  ]
+              },
               {
                   "name": "Database",
                   "classes": [
