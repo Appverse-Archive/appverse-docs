@@ -18,7 +18,78 @@ Any **Provisioning Profile** previously submitted for you bundle id application 
 * Enabling the **development** environment will change any **Development Provisioning Profile** associated with you bundle id.
 * Enabling the **production** environment will change any **Distribution Provisioning Profile** associated with your bundle id.
 
-Once you application is configured for enabling, you could follow the same steps as the other platforms.
+Once you application is configured for enabling push notifications, you could follow the same steps as the other platforms.
+
+On Android devices
+---------------------
+
+### Sender ID
+
+When registering for receiving remote notifications (using the **Unity.OnRegisterForRemoteNotificationsSuccess** method), the **senderId** argumemnt value is required for Android devices. In other platforms (such as the iOS platform, this value will be just ignored).
+
+### Notification Configuration
+
+Whereas the <b> Apple Push Notifications Service</b> (APNs) has a predefined fields names for the notification data, the <b>Google Cloud Messaging</b> (GMC) works with custom fields. Due to that fact, your application will have to define some custom fields to be received.
+
+The configuration file should be placed at the <b>/app/config/</b> folder with the <b>notification-config.xml</b> name, and the following structure (the number of fields, and their names are custom; types are predefined):
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<notification-config>
+			<android> <!-- not all fields are required, this is an example -->
+				<field name="body" type="RN_BODY"/>
+				<field name="title" type="RN_TITLE"/>
+				<field name="sound" type="RN_SOUND"/>
+				<field name="ticker" type="RN_TICKER"/>
+				<field name="largeicon" type="RN_LARGE_ICON"/>
+				<field name="smallicon" type="RN_SMALL_ICON"/>
+				<field name="ledcolor" type="RN_LED_COLOR_ARGB"/>
+			</android>
+		</notification-config>	
+
+To following field types are available:
+
++ <b>RN_TITLE</b> : the title to be used for the notification alert.
++ <b>RN_BODY</b> : the message body for the notification alert.
++ <b>RN_TICKET</b> : the text displayed in the status bar when the notification first arrives, on some devices.
++ <b>RN_SOUND</b> : the sound to play when a notification alert arrives (default sound is played instead).
++ <b>RN_SMALL_ICON</b> : the small icon name to be displaed on the notification center (if not provided, the application icon is displayed).
++ <b>RN_LARGE_ICON</b> : the large icon name to be displayed on the notification center for large screen devices (if not provided, the application icon is displayed).
++ <b>RN_LED_COLOR_ARGB</b> : the color of the led to be activated when a remote notification arrives. More information at: <a href="http://developer.android.com/reference/android/app/Notification.Builder.html#setLights(int, int, int)">android.app.Notification.Builder</a>
+
+### Server Side example
+
+The following code is a test example to send remote notifications through the <b>GCM Server</b> (Java implementation):
+
+		import com.google.android.gcm.server.*;
+		
+		public static void main(String[] args){
+			
+			Sender sender = new Sender("<your google account number to send notifications>");
+			Message.Builder build = new Message.Builder();
+			
+			// main fields (should map the ones specified at the notification-config.xml file)
+			build.addData("title", "Notification Title");
+			build.addData("body", "You have received a notification");
+			
+			// custom data
+			build.addData("customdata", "this is a custom data send by the notification server");
+						
+			Message msg = build.build();
+			Result rs;
+			try {
+				
+				String  = "<the registration id returned by the GCM when you invoke the Unity.Notification.RegisterForRemoteNotifications method>"
+				rs = sender.send(msg, registrationId, 1);
+				
+				System.out.println(rs.toString());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+See the <b>Showcase</b> application for an example of the usage.
+		
 
 On All platforms
 ---------------------
