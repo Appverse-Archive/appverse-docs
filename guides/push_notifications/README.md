@@ -100,7 +100,7 @@ To **REGISTER** your application for receiving Push Notification, please use the
 
 To **UNREGISTER** your application from receiving Push Notification, please use the **Unity.Notification.UnRegisterForRemoteNotifications** method.
 
-Your app should override some platform event listeners in order to:
+Your app should override some **platform event listeners** in order to:
 
 * Be notified about a **SUCESSFUL REGISTRATION**, by overriding the **Unity.OnRegisterForRemoteNotificationsSuccess** method.
 	* When called, this method will receive as an argument the **registration token** ("device token" for iOS or "registration ID" for Android) received from the Notifications Service (APNs for iOS or GMC for Android).
@@ -109,12 +109,20 @@ Your app should override some platform event listeners in order to:
 
 * Be notified about a **FAILURE REGISTRATION**, by overriding the **Unity.OnRegisterForRemoteNotificationsFailure** method.
 	* When called, this method will receive as an argument the **registration error** information.
+	* Available error codes on **Android Platform**:
+		* **{@link Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_DEFAULT Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_DEFAULT}** : this is the default error code value received when an error ocurrs during the registration process.
+		* **{@link Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_MISMATCH_SENDERID Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_MISMATCH_SENDERID}** : this is the error code value received when your application is trying to register with a sender id but your device/application is already registered with another sender id (a previous one, maybe a test one).
+			* When receiving this error, your application should perform an unregistration (via the **Unity.Notification.UnRegisterForRemoteNotifications** method) and repeat the registration call when the platform calls your **Unity.OnUnRegisterForRemoteNotificationsSuccess** method implementation.
+		* **{@link Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_GCM_SERVER Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_GCM_SERVER}** : this is error code value received when an error is sendby the GCM Server either on the registration or unregistration process.
 	* For further details check the **Unity.Notification.RegistrationError** class.
 	
 * Be notified about an **INCOMING REMOTE NOTIFICATION**,  by overriding the **Unity.OnRemoteNotificationReceived** method.
 	* When called, this method will receive as an argument the **notification data** information.
 	* This method is not called when the notification is received and the application is not running.
 	* For further details check the **Unity.Notification.NotificationData** class.
+	
+* Be notified about a **SUCESSFUL UNREGISTRATION**, by overriding the **Unity.OnUnRegisterForRemoteNotificationsSuccess** method. <br/><img src="resources/images/warning.png"/> This method is just called on **Android** Platform.
+	* This method will just aware the application that the last unregistration call (via the **Unity.Notification.UnRegisterForRemoteNotifications** method) was successful.
 	
 Only on iOS Platform
 ---------------------
