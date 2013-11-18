@@ -26,6 +26,16 @@
                   "name": "push_notifications",
                   "title": "Enabling Push Notifications",
                   "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for enabling the <b>Push Notifications</b> in your application</font>"
+              },
+			  {
+                  "name": "launch_applications",
+                  "title": "Launching Applications",
+                  "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for starting other applications and also allowing other applications to start your application</font>"
+              },
+			  {
+                  "name": "security_keychain",
+                  "title": "Secure Credentials Storage (shared)",
+                  "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for using the <b>Security</b> API to share data (storing credentials is the common usage) between apps in a 'secured shared sandbox'</font>"
               }
           ]
       },
