@@ -38,7 +38,7 @@ Example:
 				
 				Android: 
 				Using an implicit intent with the action SEND and a plain text mime type. In this case, no URI scheme is used.
-				Parameters passed when launching application (using the Unity.System.LaunchApplication method) via the query string argument will be parsed and 
+				Parameters passed when launching application (using the Appverse.System.LaunchApplication method) via the query string argument will be parsed and 
 				passed to the Intent as extras (name/value string pairs)
 		-->
 		<app name="appmail">
@@ -90,7 +90,7 @@ Example:
 	</launch-config>
 
 
-This file defines a list of **apps** that could be launched using the **Unity.System** API.
+This file defines a list of **apps** that could be launched using the **Appverse.System** API.
 
 Each app is identified by its **name** attribute. Names should be unique. If you repeat an app name on this config file, the first application with the matched name will be used.
 
@@ -111,7 +111,7 @@ See more information about Android intents at: <a href="http://developer.android
 - For iOS applications, use the **&lt;ios /&gt;** node.
 
 	- Use the **uri-scheme** attribute to define the URL scheme to use to open that url.
-	- Parameters are passed when launching application (using the **Unity.System.LaunchApplication** method) via a query string.
+	- Parameters are passed when launching application (using the **Appverse.System.LaunchApplication** method) via a query string.
 	
 - For Android application, there are two options:
 
@@ -138,26 +138,26 @@ See more information about Android intents at: <a href="http://developer.android
 			<br/><a href="http://developer.android.com/reference/android/net/Uri.html" target="_blank">http://developer.android.com/reference/android/net/Uri.html</a>
 			<br/><a href="http://developer.android.com/training/basics/intents/sending.html" target="_blank">http://developer.android.com/training/basics/intents/sending.html</a>
 		
-		Parameters are passed when launching application (using the **Unity.System.LaunchApplication** method) via a query string.
+		Parameters are passed when launching application (using the **Appverse.System.LaunchApplication** method) via a query string.
 		
 		- **uri-remove-double-slash** [boolean] : true to remove the double slashes from the URI scheme (default: false)
 		 
 	- For both implicit and explicit intents:
-		- Use the **parse-query-as-intent-extras** attribute (setting a "true" value) for indicating to the platform that the data received as query string on the **Unity.System.LaunchApplication** method should be parsed and included as **intent extras** when launching this intent. Default value is false.
+		- Use the **parse-query-as-intent-extras** attribute (setting a "true" value) for indicating to the platform that the data received as query string on the **Appverse.System.LaunchApplication** method should be parsed and included as **intent extras** when launching this intent. Default value is false.
 	
 - Default URL schemes contain the "//" characters in the syntax (example: <i>myapp://mypath?param=value&param=value</i>). <br/> To remove the double slashes set the **uri-remove-double-slash** attribute to true in both **&lt;ios/&gt; or **&lt;android-implicit-intent/&gt; nodes
 	
 ## New System API methods
 
-Taking this into account, the platform has included some methods on the **Unity.System** API in order to:
+Taking this into account, the platform has included some methods on the **Appverse.System** API in order to:
 
-* Get all applications configured to be launched using the **Unity.System.GetApplications** method.
-	* This method will return an array of **Unity.System.App** objects configured at the **/app/config/launch-config.xml** file.
+* Get all applications configured to be launched using the **Appverse.System.GetApplications** method.
+	* This method will return an array of **Appverse.System.App** objects configured at the **/app/config/launch-config.xml** file.
 	* Only the platform specific nodes will be returned inside that objects: **iOSApp** field for iOS platform, and **AndroidApp** field for Android platform.
-* Get an application configured to be launched identified by its **name**, using the **Unity.System.GetApplication** method.
-	* This method will return an **Unity.System.App** object, that matches one of the apps configured at the **/app/config/launch-config.xml** file.
+* Get an application configured to be launched identified by its **name**, using the **Appverse.System.GetApplication** method.
+	* This method will return an **Appverse.System.App** object, that matches one of the apps configured at the **/app/config/launch-config.xml** file.
 	* Only the platform specific nodes will be returned inside that object: **iOSApp** field for iOS platform, and **AndroidApp** field for Android platform.
-* Using an **Unity.System.App** object obtained from the above methods, you could launch that application using the **Unity.System.LaunchApplication** method.
+* Using an **Appverse.System.App** object obtained from the above methods, you could launch that application using the **Appverse.System.LaunchApplication** method.
 	* First argument of that method is the application object or the name of that application (platform will find it for you, saving one platform call from the javascript side)
 	* Second argument is the **query** string to pass application specific parameters when launching that app. In the format of: <i>any_desired_path/?param1=value1&param2=value2&....</i>
 
@@ -201,12 +201,12 @@ For launching our Android application, the platform has enabled the "explicit mo
 
 The value other third-party should use to launch our application is:
 
-* The component name available for this application to be launched. Example: com.gft.unity.poc.showcase/org.me.unity4jui_android.MainActivity
+* The component name available for this application to be launched. Example: com.gft.appverse.poc.showcase/org.me.unity4jui_android.MainActivity
  
 For example, this application could be called by **starting an android Intent** with the component name:<br/>**com.gft.appverse.showcase/org.me.unity4jui_android.MainActivity**.
 
 	Intent launchIntent = new Intent();
-	String componentName = "com.gft.unity.poc.showcase/org.me.unity4jui_android.MainActivity";
+	String componentName = "com.gft.appverse.poc.showcase/org.me.unity4jui_android.MainActivity";
 	launchIntent.setComponent(ComponentName.unflattenFromString(componentName));
 	
 	// For adding parameters
@@ -229,6 +229,6 @@ Those parameters could be used to launch the app in a specific menu option, or h
 
 Platform will handle those parameters, and will pass them to the javascript hybrid application using the following **listener**:
 
-* To we aware about any launched data application should override the **Unity.OnExternallyLaunched** listener:
+* To we aware about any launched data application should override the **Appverse.OnExternallyLaunched** listener:
 	* Applications should override/implement this method to be aware of being lanched by a third-party application, and should perform the desired javascript code on this case.
-	* Argument received is an array of **Unity.System.LaunchData** objects containing the launched parameters.
+	* Argument received is an array of **Appverse.System.LaunchData** objects containing the launched parameters.

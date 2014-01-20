@@ -1,140 +1,140 @@
 [
       {
-          "name": "Unity",
+          "name": "Appverse",
           "groups": [
               {
                   "name": "Analytics",
                   "classes": [
-                      "Unity.Analytics",
-                      "Unity.Analytics.*"
+                      "Appverse.Analytics",
+                      "Appverse.Analytics.*"
                   ]
               },
 			  {
                   "name": "AppLoader",
                   "classes": [
-                      "Unity.AppLoader",
-                      "Unity.AppLoader.*"
+                      "Appverse.AppLoader",
+                      "Appverse.AppLoader.*"
                   ]
               },
               {
                   "name": "Database",
                   "classes": [
-                      "Unity.Database",
-                      "Unity.Database.*"
+                      "Appverse.Database",
+                      "Appverse.Database.*"
                   ]
               },
               {
                   "name": "FileSystem",
                   "classes": [
-                      "Unity.FileSystem",
-                      "Unity.FileSystem.*"
+                      "Appverse.FileSystem",
+                      "Appverse.FileSystem.*"
                   ]
               },
               {
                   "name": "Geolocation",
                   "classes": [
-                      "Unity.Geo",
-                      "Unity.Geo.*"
+                      "Appverse.Geo",
+                      "Appverse.Geo.*"
                   ]
               },
               {
                   "name": "I18N",
                   "classes": [
-                      "Unity.I18N",
-                      "Unity.I18N.*"
+                      "Appverse.I18N",
+                      "Appverse.I18N.*"
                   ]
               },
               {
                   "name": "I/O Services",
                   "classes": [
-                      "Unity.IO",
-                      "Unity.IO.*"
+                      "Appverse.IO",
+                      "Appverse.IO.*"
                   ]
               },
               {
                   "name": "Log",
                   "classes": [
-                      "Unity.Log",
-                      "Unity.Log.*"
+                      "Appverse.Log",
+                      "Appverse.Log.*"
                   ]
               },
               {
                   "name": "Media",
                   "classes": [
-                      "Unity.Media",
-                      "Unity.Media.*"
+                      "Appverse.Media",
+                      "Appverse.Media.*"
                   ]
               },
               {
                   "name": "Messaging",
                   "classes": [
-                      "Unity.Messaging",
-                      "Unity.Messaging.*"
+                      "Appverse.Messaging",
+                      "Appverse.Messaging.*"
                   ]
               },
               {
                   "name": "Net",
                   "classes": [
-                      "Unity.Net",
-                      "Unity.Net.*"
+                      "Appverse.Net",
+                      "Appverse.Net.*"
                   ]
               },
               {
                   "name": "Notification",
                   "classes": [
-                      "Unity.Notification",
-                      "Unity.Notification.*"
+                      "Appverse.Notification",
+                      "Appverse.Notification.*"
                   ]
               },
               {
                   "name": "Personal Information Management",
                   "classes": [
-                      "Unity.Pim",
-                      "Unity.Pim.*"
+                      "Appverse.Pim",
+                      "Appverse.Pim.*"
                   ]
               },
               {
                   "name": "Security",
                   "classes": [
-                      "Unity.Security",
-                      "Unity.Security.*"
+                      "Appverse.Security",
+                      "Appverse.Security.*"
                   ]
               },
               {
                   "name": "System",
                   "classes": [
-                      "Unity.System",
-                      "Unity.System.*"
+                      "Appverse.System",
+                      "Appverse.System.*"
                   ]
               },
               {
                   "name": "Telephony",
                   "classes": [
-                      "Unity.Telephony",
-                      "Unity.Telephony.*"
+                      "Appverse.Telephony",
+                      "Appverse.Telephony.*"
                   ]
               },
               {
                   "name": "User Interface (visual components)",
                   "classes": [
-                      "Unity.ui",
-                      "Unity.ui.*"
+                      "Appverse.ui",
+                      "Appverse.ui.*"
                   ]
               },
 			  {
                   "name": "Webtrekk",
                   "classes": [
-                      "Unity.Webtrekk",
-                      "Unity.Webtrekk.*"
+                      "Appverse.Webtrekk",
+                      "Appverse.Webtrekk.*"
                   ]
               },
               {
                   "name": "Others...",
                   "classes": [
-                      "Unity",
-					  "Unity.DateTime",
-                      "Unity.is",
-                      "Unity.JSON"
+                      "Appverse",
+					  "Appverse.DateTime",
+                      "Appverse.is",
+                      "Appverse.JSON"
                   ]
               }
           ]

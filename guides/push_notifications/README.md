@@ -25,7 +25,7 @@ On Android devices
 
 ### Sender ID
 
-When registering for receiving remote notifications (using the **Unity.OnRegisterForRemoteNotificationsSuccess** method), the **senderId** argumemnt value is required for Android devices. In other platforms (such as the iOS platform, this value will be just ignored).
+When registering for receiving remote notifications (using the **Appverse.OnRegisterForRemoteNotificationsSuccess** method), the **senderId** argumemnt value is required for Android devices. In other platforms (such as the iOS platform, this value will be just ignored).
 
 ### Notification Configuration
 
@@ -78,7 +78,7 @@ The following code is a test example to send remote notifications through the <b
 			Result rs;
 			try {
 				
-				String  = "<the registration id returned by the GCM when you invoke the Unity.Notification.RegisterForRemoteNotifications method>"
+				String  = "<the registration id returned by the GCM when you invoke the Appverse.Notification.RegisterForRemoteNotifications method>"
 				rs = sender.send(msg, registrationId, 1);
 				
 				System.out.println(rs.toString());
@@ -94,44 +94,44 @@ See the <b>Showcase</b> application for an example of the usage.
 On All platforms
 ---------------------
 
-To **REGISTER** your application for receiving Push Notification, please use the **Unity.Notification.RegisterForRemoteNotifications** method.
+To **REGISTER** your application for receiving Push Notification, please use the **Appverse.Notification.RegisterForRemoteNotifications** method.
 
 (*) Note: remote notifications are not granted to be delivered to the device. In addition, the registration token supplied by the Push Notificaion Service after registration could change. So it is a common approach to execute the registration each time the application launches.
 
-To **UNREGISTER** your application from receiving Push Notification, please use the **Unity.Notification.UnRegisterForRemoteNotifications** method.
+To **UNREGISTER** your application from receiving Push Notification, please use the **Appverse.Notification.UnRegisterForRemoteNotifications** method.
 
 Your app should override some **platform event listeners** in order to:
 
-* Be notified about a **SUCESSFUL REGISTRATION**, by overriding the **Unity.OnRegisterForRemoteNotificationsSuccess** method.
+* Be notified about a **SUCESSFUL REGISTRATION**, by overriding the **Appverse.OnRegisterForRemoteNotificationsSuccess** method.
 	* When called, this method will receive as an argument the **registration token** ("device token" for iOS or "registration ID" for Android) received from the Notifications Service (APNs for iOS or GMC for Android).
-	* This token must be sended to your application **Push Notification Provider**, using a secure SSL channel (the **Unity.IO** services could be used for that purpose).
-	* For further details check the **Unity.Notification.RegistrationToken** class.
+	* This token must be sended to your application **Push Notification Provider**, using a secure SSL channel (the **Appverse.IO** services could be used for that purpose).
+	* For further details check the **Appverse.Notification.RegistrationToken** class.
 
-* Be notified about a **FAILURE REGISTRATION**, by overriding the **Unity.OnRegisterForRemoteNotificationsFailure** method.
+* Be notified about a **FAILURE REGISTRATION**, by overriding the **Appverse.OnRegisterForRemoteNotificationsFailure** method.
 	* When called, this method will receive as an argument the **registration error** information.
 	* Available error codes on **Android Platform**:
-		* **{@link Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_DEFAULT Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_DEFAULT}** : this is the default error code value received when an error ocurrs during the registration process.
-		* **{@link Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_MISMATCH_SENDERID Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_MISMATCH_SENDERID}** : this is the error code value received when your application is trying to register with a sender id but your device/application is already registered with another sender id (a previous one, maybe a test one).
-			* When receiving this error, your application should perform an unregistration (via the **Unity.Notification.UnRegisterForRemoteNotifications** method) and repeat the registration call when the platform calls your **Unity.OnUnRegisterForRemoteNotificationsSuccess** method implementation.
-		* **{@link Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_GCM_SERVER Unity.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_GCM_SERVER}** : this is error code value received when an error is sendby the GCM Server either on the registration or unregistration process.
-	* For further details check the **Unity.Notification.RegistrationError** class.
+		* **{@link Appverse.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_DEFAULT Appverse.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_DEFAULT}** : this is the default error code value received when an error ocurrs during the registration process.
+		* **{@link Appverse.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_MISMATCH_SENDERID Appverse.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_MISMATCH_SENDERID}** : this is the error code value received when your application is trying to register with a sender id but your device/application is already registered with another sender id (a previous one, maybe a test one).
+			* When receiving this error, your application should perform an unregistration (via the **Appverse.Notification.UnRegisterForRemoteNotifications** method) and repeat the registration call when the platform calls your **Appverse.OnUnRegisterForRemoteNotificationsSuccess** method implementation.
+		* **{@link Appverse.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_GCM_SERVER Appverse.Notification#REMOTE_NOTIFICATION_REGISTRATION_FAILURE_GCM_SERVER}** : this is error code value received when an error is sendby the GCM Server either on the registration or unregistration process.
+	* For further details check the **Appverse.Notification.RegistrationError** class.
 	
-* Be notified about an **INCOMING REMOTE NOTIFICATION**,  by overriding the **Unity.OnRemoteNotificationReceived** method.
+* Be notified about an **INCOMING REMOTE NOTIFICATION**,  by overriding the **Appverse.OnRemoteNotificationReceived** method.
 	* When called, this method will receive as an argument the **notification data** information.
 	* This method is not called when the notification is received and the application is not running.
-	* For further details check the **Unity.Notification.NotificationData** class.
+	* For further details check the **Appverse.Notification.NotificationData** class.
 	
-* Be notified about a **SUCESSFUL UNREGISTRATION**, by overriding the **Unity.OnUnRegisterForRemoteNotificationsSuccess** method. <br/><img src="resources/images/warning.png"/> This method is just called on **Android** Platform.
-	* This method will just aware the application that the last unregistration call (via the **Unity.Notification.UnRegisterForRemoteNotifications** method) was successful.
+* Be notified about a **SUCESSFUL UNREGISTRATION**, by overriding the **Appverse.OnUnRegisterForRemoteNotificationsSuccess** method. <br/><img src="resources/images/warning.png"/> This method is just called on **Android** Platform.
+	* This method will just aware the application that the last unregistration call (via the **Appverse.Notification.UnRegisterForRemoteNotifications** method) was successful.
 	
 Only on iOS Platform
 ---------------------
 
 The following methods are only available on the **iOS** platform:
 
-* **Unity.Notification.IncrementApplicationIconBadgeNumber**
-* **Unity.Notification.DecrementApplicationIconBadgeNumber**
-* **Unity.Notification.SetApplicationIconBadgeNumber**
+* **Appverse.Notification.IncrementApplicationIconBadgeNumber**
+* **Appverse.Notification.DecrementApplicationIconBadgeNumber**
+* **Appverse.Notification.SetApplicationIconBadgeNumber**
 
 They allow the application to change the application bage number (the number inside the red icon located at the application top-right corner).
 This feature is not available on the Android platform.

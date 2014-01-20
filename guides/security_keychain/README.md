@@ -12,18 +12,18 @@ For example it could be used to implement a Single Sign-On (SSO) authentication 
 The functionality to access this storage system is located in the **Security API**.
 Below you can find a list of the methods used to access the storage and a brief description of their behaviour.
 
-* **Unity.Security.StoreKeyValuePair** : The function will store in the storage unit the passed KeyPair object. If the key name being used in the parameter already exists in the storage unit, the latter will be overwritten. When the execution ends the function will calls **Unity.OnKeyValuePairsStoreCompleted**
-* **Unity.Security.StoreKeyValuePairs** : The function behaves exactly as **StoreKeyValuePair** with the difference that accepts an array of KeyPair objects.
-* **Unity.Security.GetStoredKeyValuePair** : The function will look for the specified keyname and will return the value associated to it. When the execution ends the function will calls **Unity.OnKeyValuePairsFound**
-* **Unity.Security.GetStoredKeyValuePairs** : The function behaves exactly as **GetStoredKeyValuePair** with the difference that accepts an array of String objects.
-* **Unity.Security.RemoveStoredKeyValuePair** : The function will remove from the storage unit the KeyPair associated to the passed keyname. When the execution ends the function will calls **Unity.OnKeyValuePairsRemoveCompleted**
-* **Unity.Security.RemoveStoredKeyValuePairs** : The function behaves exactly as **RemoveStoredKeyValuePair** with the difference that accepts an array of String objects.
+* **Appverse.Security.StoreKeyValuePair** : The function will store in the storage unit the passed KeyPair object. If the key name being used in the parameter already exists in the storage unit, the latter will be overwritten. When the execution ends the function will calls **Appverse.OnKeyValuePairsStoreCompleted**
+* **Appverse.Security.StoreKeyValuePairs** : The function behaves exactly as **StoreKeyValuePair** with the difference that accepts an array of KeyPair objects.
+* **Appverse.Security.GetStoredKeyValuePair** : The function will look for the specified keyname and will return the value associated to it. When the execution ends the function will calls **Appverse.OnKeyValuePairsFound**
+* **Appverse.Security.GetStoredKeyValuePairs** : The function behaves exactly as **GetStoredKeyValuePair** with the difference that accepts an array of String objects.
+* **Appverse.Security.RemoveStoredKeyValuePair** : The function will remove from the storage unit the KeyPair associated to the passed keyname. When the execution ends the function will calls **Appverse.OnKeyValuePairsRemoveCompleted**
+* **Appverse.Security.RemoveStoredKeyValuePairs** : The function behaves exactly as **RemoveStoredKeyValuePair** with the difference that accepts an array of String objects.
 
 Below you can find the list of Javascript callbacks used by the mentioned functions:
  
-* **Unity.OnKeyValuePairsStoreCompleted** : Parameters contain an array of KeyPair objects successfully stored and an array of KeyPair objects that could not be stored.
-* **Unity.OnKeyValuePairsFound** : Parameters contain an array of the KeyPair objects found.
-* **Unity.OnKeyValuePairsRemoveCompleted** : Parameters contain an array of KeyPair objects successfully removed and an array of KeyPair objects that could not be removed.
+* **Appverse.OnKeyValuePairsStoreCompleted** : Parameters contain an array of KeyPair objects successfully stored and an array of KeyPair objects that could not be stored.
+* **Appverse.OnKeyValuePairsFound** : Parameters contain an array of the KeyPair objects found.
+* **Appverse.OnKeyValuePairsRemoveCompleted** : Parameters contain an array of KeyPair objects successfully removed and an array of KeyPair objects that could not be removed.
 
 ## iOS Concepts
 
