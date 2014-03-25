@@ -15,7 +15,8 @@ Please check, detailed supported features on the following Wiki page:
 
 <pre>
 
-[15 JAN 2014]   Release_4.3		- Revision 4308 (default platform version)
+[xx Mar 2014]   Release_4.4		- Revision XXXX (default platform version)
+[15 Jan 2014]   Release_4.3		- Revision 4308 
 [22 Oct 2013]   Release_4.2.2	- Revision 3910
 [22 Oct 2013]   Release_4.2.1	- Revision 3900
 [20 Sep 2013]   Release_4.2		- Revision 3777

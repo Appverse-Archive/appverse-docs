@@ -9,8 +9,9 @@ In addition, it could be required to pass some data to the just launched applica
 Each mobile platform has each own way to launch other applications:
 
 * **iOS apps** define an **URI scheme** to be called.<br/>And data is passed using a URI **query string**, with the URL standard parameters format: <i>any_desired_path/?param1=value1&param2=value2&....</i>
-
+<br/>
 * **Android apps** define **Intents** (Activity) to be launched with some paramaters: action, category, component name, etc.
+	* One of those intents could be also an **action.VIEW** and user could specify an **URI scheme** to launch an specific activity of an application - usually, then main activity.
 
 As we work with **hybrid applications** - where the logic is in the javascript code - we need to make this feature accessible via the **javascript** code, using **common interfaces** that will behave differently in each platform.
 
@@ -146,6 +147,8 @@ See more information about Android intents at: <a href="http://developer.android
 		- Use the **parse-query-as-intent-extras** attribute (setting a "true" value) for indicating to the platform that the data received as query string on the **Appverse.System.LaunchApplication** method should be parsed and included as **intent extras** when launching this intent. Default value is false.
 	
 - Default URL schemes contain the "//" characters in the syntax (example: <i>myapp://mypath?param=value&param=value</i>). <br/> To remove the double slashes set the **uri-remove-double-slash** attribute to true in both **&lt;ios/&gt; or **&lt;android-implicit-intent/&gt; nodes
+<br/>
+- URL scheme names for Android only allow **lowercase** or **capitalize** (just the first letter in uppercase) formats, otherwise the application will not be recognized for being launched.
 	
 ## New System API methods
 
@@ -163,21 +166,25 @@ Taking this into account, the platform has included some methods on the **Appver
 
 ## Allow other apps to launch your app
 
-Your application could be launched by other third-party applications if we define some **properties**.
+Your application could be launched by other third-party applications if we define some **build properties** on our **Mobile Emulator**.
 
 ### For iOS
 
 You should define which is the **URL scheme** used for your application.
 
-* Think a scheme for your application desired URL scheme. Example: showcase
+* Go to the **Compile** &gt;&gt; **Build Properties** emulator menu option.
+* In the **Application Settings** tab, locate the **Launch Options** section (at the bottom of the tab).
+* In the text field labeled as **Bundle URL scheme**, introduce your application desired URL scheme.
 
-For example, we have introduced the **showcase** scheme.
+<img src="guides/launch_applications/emulator_ios_properties.png" width="850" />
 
-Applications calling the following scheme: <b><i>showcase://</i></b> will launch our showcase application.
+In the screenshot example, we have introduced the **showcase** scheme.
+
+Applications calling the following scheme: <b><i>showcase://</i></b> will launch our showcase iOS application.
 
 For adding parameters, use the standard URL query string format:  <b><i>showcase://relativepath/?param1=abc&param2=xyz</i></b>
 
-Include the following required parameters in its **Info.plist**:
+The final binary iOS app will include the required parameters in its **Info.plist**:
 
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -191,19 +198,32 @@ Include the following required parameters in its **Info.plist**:
 		</dict>
 	</array>
 
+<br/>
+Reference Links for iOS development:
+
 <img src="resources/images/information.png"/> See more information at the **Apple Developer** documentation: <a href="https://developer.apple.com/library/ios/DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW50" target="_blank">Implementing Custom URL Schemes</a>	
 	
 <img src="resources/images/information.png"/> Check our sample application to see how other applications (in this case an iOS native application) could start our application: <a href="https://github.com/Appverse/appverse-mobile/tree/master/appverse-samples" target="_balnk"><b>iOSNativeTest</b></a>
 	
 ### For Android
 
-For launching our Android application, the platform has enabled the "explicit mode"; so you have to provided the specific component name (&lt;package_name&gt;/&lt;fully_qualified_class_name&gt;).
+For launching our Android application, the platform has enabled two modes:
+<br/>
 
-The value other third-party should use to launch our application is:
+* the "explicit mode"; so you have to provided the specific component name (&lt;package_name&gt;/&lt;fully_qualified_class_name&gt;)
+* and an specific "implicit mode" : action.VIEW + URL scheme; so you have to provide the bundle URL scheme (same behaviour as iOS)
 
-* The component name available for this application to be launched. Example: com.gft.appverse.poc.showcase/org.me.unity4jui_android.MainActivity
+#### Using the Component Name
+
+The value other third-party should use to launch our application is displayed on our **Mobile Emulator**.
+
+* Go to the **Compile** &gt;&gt; **Build Properties** emulator menu option.
+* In the **Application Settings** tab, locate the **Launch Options** section (at the bottom of the tab).
+* In the text field labeled as **Component Name**, you could check there which is the component name available for this application to be launched.
  
-For example, this application could be called by **starting an android Intent** with the component name:<br/>**com.gft.appverse.showcase/org.me.unity4jui_android.MainActivity**.
+<img src="guides/launch_applications/emulator_android_properties.png" width="850" />
+
+In the screenshot example, this application could be called by **starting an android Intent** with the component name:<br/>**com.gft.appverse.showcase/org.me.unity4jui_android.MainActivity**.
 
 	Intent launchIntent = new Intent();
 	String componentName = "com.gft.appverse.poc.showcase/org.me.unity4jui_android.MainActivity";
@@ -214,6 +234,33 @@ For example, this application could be called by **starting an android Intent** 
 	launchIntent.putExtra("param2", "value2");
 		
 	this.startActivity(launchIntent);
+	
+#### Using an URI scheme
+
+Users could include a bundle URL scheme for the Android app. The same build property is used for all platforms.
+
+* Go to the **Compile** &gt;&gt; **Build Properties** emulator menu option.
+* In the **Application Settings** tab, locate the **Launch Options** section (at the bottom of the tab).
+* In the text field labeled as **Bundle URL scheme**, introduce your application desired URL scheme.
+
+<img src="guides/launch_applications/emulator_ios_properties.png" width="850" />
+
+In the screenshot example, we have introduced the **showcase** scheme.
+
+Applications calling the following scheme: <b><i>showcase://</i></b> (from any browser page, for example) will launch our showcase Android application.
+
+Application could also be called by other native Android apps just **starting an android Intent** with the an **action** type **VIEW**, and specifying the configured URI scheme.
+
+	Uri showcaseAppUri = Uri.parse("showcase://relativepath/?param1=value1&param2=value2");
+    Intent intent = new Intent(Intent.ACTION_VIEW, showcaseAppUri);
+    if (intent.resolveActivity(getPackageManager()) != null) {
+        startActivity(intent);
+    }
+
+<img src="resources/images/warning.png"/> Remember that, when using the URL scheme for Android only **lowercase** or **capitalize** formats are recognized.
+
+<br/>
+Reference Links for Android development:
 
 <img src="resources/images/information.png"/> See the following link for further details about starting android applications: <a href="http://developer.android.com/training/basics/intents/index.html" target="_blank">http://developer.android.com/training/basics/intents/index.html</a>
 

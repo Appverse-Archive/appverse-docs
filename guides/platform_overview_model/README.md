@@ -15,7 +15,7 @@ We have many challenges when developing mobile applications
 * We have to decide our target market; we can't support them all in a sustainable manner... or can we?
 
 <div style="float:right;top: -150px;position: relative;">
-<img src="guides/platform_overview_model/unity-model.png" alt="Alt A Model Driven Approach " style="max-height:80%;max-width:80%">
+<img src="guides/platform_overview_model/appverse-model.png" alt="Alt A Model Driven Approach " style="max-height:80%;max-width:80%">
 </div>
 
 ### So... we work with a "Model" device and not a specific device in mind!

@@ -47,32 +47,25 @@ In order for 2 or more applications to access the shared data must meet a set of
 
 * **Applications must be signed with the same Certificate**
 * **Applications must specify the same android:sharedUserId setting and value in their manifest file**
-* **Applications must specify the same package name and preferences file name settings and value in their strings.xml file**
 * **Applications that want to access the shared data must know the Application which keeps the shared preferences file component name**
 
 <img src="guides/security_keychain/android_shared_preferences.png" width="850" />
 
-## Properties
+## Emulator Build Properties
+
+<img src="guides/security_keychain/emulator_properties1.png" width="850" />
+
+<img src="guides/security_keychain/emulator_properties2.png" width="850" />
 
 **For Android**:
-In order to store data in the shared storage in order for other apps to access it, you need to define the following:
 
 * **Shared package name** : The package of the application that is the 'owner' of the preferences file to be shared. That application must be installed on the device (but it is not required to be launched at all)
 * **Shared Preferences Filename** :The name of the file (known by all applications that wants to share it) to be stored and accessed in the SharedPreferences
 * **Shared UserId** : The user id that all applications should configure at their Manifest to access the shared preferences (in addition, access is only allowed if applications are signed by the same certificate)
 
-Make sure you add the following lines to the **string.xml** file:
-	<string name="Appverse_Shared_PackageName">YOUR_SHARED_PACKAGE_NAME</string>
-	<string name="Appverse_Shared_Preferences_Filename">YOUR_SHARED_PREFERENCES_FILENAME</string>
-	
-And define in your manifest file the following:
+**For iOS**:
 
-	 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	 	android:versionCode="1" android:versionName="1.0.0"
-		package="YOUR_APPLICATION_PACKAGE_HERE"
-		**android:sharedUserId="YOUR_SHAREDUSERID">**
-	 	<uses-sdk android:minSdkVersion="YOUR_MIN_SDK_VERSION" android:targetSdkVersion="YOUR_SDK_VERSION"/>
-
+* **Shared Keychain Access Group** : the Keychain Access Group value (it will be later added the bundle id prefix at the beginning) to be defined at the bundle Entitlements to configured the Shared Keychain
 
 ## Build properties names (for iOS and for Android)
 
@@ -88,7 +81,9 @@ Below you can find a list of the build properties used to configure this functio
 
 * **app.security.shared.keychain.accessgroup**=com.gft.appverse.shared
 
-### How native applications could access the storage in iOS
+## How native applications could access the storage
+
+### In iOS
 
 An application that wants to share data with other applications should have an entitlement like the below one:
 
@@ -131,7 +126,7 @@ For this application to read something from the shared keychain it should execut
 **In order for this code to successfully retrieve an object value all the previously listed requirements must be met**
 Example at Appverse Github: <a href="https://github.com/Appverse/appverse-mobile/tree/master/appverse-samples" target="_blank">iOS Native Application Example</a>
 
-### How native applications could access the storage in Android
+### In Android
 
 An application that wants to access the shared data by other application should define in the manifest the sharedUserId property:
 

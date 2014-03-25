@@ -28,6 +28,11 @@
                   "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for enabling the <b>Push Notifications</b> in your application</font>"
               },
 			  {
+                  "name": "application_listeners",
+                  "title": "Subscribing to Appverse Listeners",
+                  "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for subscribing your app to the available <b>Appverse Application Listeners</b></font>"
+              },
+			  {
                   "name": "launch_applications",
                   "title": "Launching Applications",
                   "description": "<font style='font-size:11px;'>Some <b>Guidelines</b> for starting other applications and also allowing other applications to start your application</font>"
