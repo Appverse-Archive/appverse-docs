@@ -1,5 +1,15 @@
  [
       {
+          "title": "Announcements",
+          "items": [
+              {
+                  "name": "platform_releases",
+                  "title": "Appverse Platform Releases",
+                  "description": "<font style='font-size:11px;'>Check our latest Appverse Platform Releases</font>"
+              }
+          ]
+      },
+      {
           "title": "Overview",
           "items": [
               {

@@ -38,6 +38,12 @@ The following are the current Appverse app listeners available on the platform:
 * **Appverse.AppLoader.onUpdateModulesFinished**: Lets your app to know that the requested modules update has been completed. The listener provides information about the successful and failed updated modules.
 * **Appverse.AppLoader.onDeleteModulesFinished**: Lets your app to know that the requested modules deletion has been completed. The listener provides information about the successful and failed deleted modules.
 
+### Beacons Events
+* **Appverse.Beacon.OnEntered**: Lets your app be aware that a previously detected beacon is found again.
+* **Appverse.Beacon.OnExited**: Lets your app to be aware that a previously detected beacon is not found.
+* **Appverse.Beacon.OnDiscover**: Lets your app to be aware that a new beacon is discovered.
+* **Appverse.Beacon.OnUpdateProximity**: Lets your app to be aware that the distance of a known beacon has changed.
+
 How to subscribe to a listener
 ---------------------
 

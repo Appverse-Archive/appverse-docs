@@ -17,6 +17,13 @@
                   ]
               },
               {
+                  "name": "Beacons",
+                  "classes": [
+                      "Appverse.Beacon",
+                      "Appverse.Beacon.*"
+                  ]
+              },
+              {
                   "name": "Database",
                   "classes": [
                       "Appverse.Database",

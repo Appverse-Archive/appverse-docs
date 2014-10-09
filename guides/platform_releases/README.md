@@ -1,4 +1,4 @@
-Unity Platform Releases
+Appverse Platform Releases
 ====================
 
 Releases (SVN Tags)
@@ -14,8 +14,10 @@ Please check, detailed supported features on the following Wiki page:
 <a href="https://github.com/Appverse/appverse-mobile/wiki/Appverse-Supported-Features" target="_blank">Appverse Supported Features</a>
 
 <pre>
-
-[xx Mar 2014]   Release_4.4		- Revision XXXX (default platform version)
+[06 Oct 2014]   Release_4.7		- Revision 4775 (default platform version)
+[25 Jul 2014]   Release_4.6		- Revision 4627
+[05 Jun 2014]   Release_4.5		- Revision 4537
+[28 Mar 2014]   Release_4.4		- Revision 4431 
 [15 Jan 2014]   Release_4.3		- Revision 4308 
 [22 Oct 2013]   Release_4.2.2	- Revision 3910
 [22 Oct 2013]   Release_4.2.1	- Revision 3900
